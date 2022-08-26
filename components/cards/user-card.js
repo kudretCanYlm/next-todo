@@ -1,5 +1,3 @@
-
-
 export default function UserCard({ userName, imgUrl,className }) {
 
     return (
