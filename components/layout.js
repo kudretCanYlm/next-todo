@@ -30,7 +30,7 @@ export default function Layout({ children, home }) {
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
-            <header className="header">
+            <header>
                 <div className="left">
                     <p>{user.name}'s Todo List</p>
                 </div>
