@@ -1,4 +1,3 @@
-import '../styles/globals.css'
 import "../styles/style.less"
 import "../styles/antd.less";
 
