@@ -7,7 +7,7 @@
 @full-width: 100%;
 @min-height: 100vh;
 @navbar-color: rgb(255, 255, 255);
-@border-radius-input-1:4px;
+@border-radius-input-1: 4px;
 @border-radius-1: 20px;
 @border-radius-2: 40px;
 @border-radius-half-percent: 50%;
@@ -23,6 +23,13 @@
 
 * {
     font-family: @common-font-family;
+}
+
+.todo-style() {
+    width: 100%;
+    padding: @margin-padding-1 @margin-padding-2;
+    background-color: @bg-card-col-2;
+    border-radius: @border-radius-1;
 }
 
 .input-common() {
@@ -126,11 +133,7 @@
 .add-todo-card {
     .flex-row();
     .flex-center-items();
-
-    width: 100%;
-    padding: @margin-padding-1 @margin-padding-2;
-    background-color: @bg-card-col-2;
-    border-radius: @border-radius-1;
+    .todo-style();
 
     input {
         .input-common();
@@ -139,5 +142,22 @@
         font-size: @font-size-3;
     }
 
-    
+}
+
+.todos-card {
+    .flex-column();
+    .todo-style();
+    //will change
+    margin-top: 50px;
+    //will change
+    h2 {
+        text-align: center;
+        color: @navbar-color;
+    }
+
+    .todo-board{
+        border-radius: @border-radius-1;
+        background-color: @bg-color;
+        padding: @margin-padding-1;
+    }
 }
