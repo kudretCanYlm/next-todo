@@ -1,9 +1,15 @@
 @import url("antd.less");
 
 @bg-color: rgb(212, 245, 255);
+@text-color-1: rgb(92, 92, 92);
+@text-color-2: rgb(255, 255, 255);
 @bg-navbar-col :rgb(27, 141, 255);
 @bg-card-col-1: rgb(60, 70, 255);
 @bg-card-col-2: rgb(103, 111, 255);
+@bg-button-col-1: rgb(217, 0, 0);
+@bg-button-col-1-hover: rgb(234, 0, 0);
+@bg-button-col-2: rgb(255, 145, 0);
+@bg-button-col-2-hover: rgb(255, 155, 25);
 @full-width: 100%;
 @min-height: 100vh;
 @navbar-color: rgb(255, 255, 255);
@@ -19,6 +25,8 @@
 @font-size-1: 14px;
 @font-size-2: 16px;
 @font-size-3: 18px;
+@font-size-4: 20px;
+@font-size-5: 22px;
 @common-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 * {
@@ -37,6 +45,22 @@
     outline: none;
     padding: @margin-padding-min-1;
     border-radius: @border-radius-input-1;
+}
+
+.is-padding-btn(@ispadding) when (@ispadding=true) {
+    padding: @margin-padding-1 @margin-padding-2;
+}
+
+.is-padding-btn(@ispadding) when (@ispadding=false) {
+    padding: 0;
+}
+
+.button-common(@ispadding: false) {
+    .is-padding-btn(@ispadding);
+    border: none;
+    cursor: pointer;
+    border-radius: @border-radius-1;
+    transition: 0.5s background-color;
 }
 
 .flex-row() {
@@ -149,15 +173,79 @@
     .todo-style();
     //will change
     margin-top: 50px;
+
     //will change
     h2 {
         text-align: center;
         color: @navbar-color;
     }
 
-    .todo-board{
+    .todo-board {
         border-radius: @border-radius-1;
         background-color: @bg-color;
         padding: @margin-padding-1;
+
+        .top {
+            .flex-row();
+
+
+            h2 {
+                color: @text-color-1;
+                text-align: center;
+                flex: 1;
+                font-size: @font-size-3;
+            }
+
+        }
+
+        .center {
+            .todo {
+                .flex-row();
+                margin-bottom: @margin-padding-2;
+
+                .text {
+                    flex: 1;
+                    .flex-column();
+
+                    p {
+                        text-align: center;
+                        font-size: @font-size-3;
+                    }
+                }
+
+                .btn {
+                    flex: 2;
+                    .flex-row();
+                    justify-content: space-evenly;
+
+                    button {
+                        .button-common(true);
+                        margin: auto;
+                        color: @text-color-2;
+                        font-size: @font-size-3;
+                        width: max-content;
+                    }
+
+                    &-del {
+                        background-color: @bg-button-col-1;
+                    }
+
+                    &-del:hover {
+                        background-color: @bg-button-col-1-hover;
+                    }
+
+                    &-up {
+                        background-color: @bg-button-col-2;
+                    }
+
+                    &-up:hover {
+                        background-color: @bg-button-col-2-hover;
+                    }
+
+                }
+
+
+            }
+        }
     }
 }
