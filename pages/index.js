@@ -9,6 +9,35 @@ export default function Home() {
     console.log(text);
   }
 
+
+  const todos = [
+    {
+      id: "sşflkfşdf-sdfg64645-sdfg56fd4g",
+      text: "Test Todo 1"
+    },
+    {
+      id: "lklfdsf-d5g46sfd5g4-sadf5s5",
+      text: "Test Todo 2"
+    },
+    {
+      id: "sdslflşdsf-5sdf6gdfs5g-xz5cxz46c",
+      text: "Test Todo 3"
+    },
+    {
+      id: "jasdsadj-65f4j546hgfj-56f4h65fgh",
+      text: "Test Todo 4"
+    },
+  ]
+
+  const deleteClick = (id) => {
+    console.log("todo " + id + " deleted");
+  }
+
+  const updateClick = (id) => {
+    console.log("todo " + id + " updated");
+  }
+
+
   return (
     <>
       <Head>
@@ -18,7 +47,7 @@ export default function Home() {
       </Head>
       <Layout >
         <AddTodoCard onClick={getText} />
-        <TodosCard className="" />
+        <TodosCard updateClick={updateClick} deleteClick={deleteClick} todos={todos} className="" />
       </Layout>
     </>
   )
